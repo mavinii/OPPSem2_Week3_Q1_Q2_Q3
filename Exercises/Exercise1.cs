@@ -13,7 +13,8 @@ namespace OPP_Sem2_Week3_Q1_Q2_Q3.Exercises
 {
     public class Exercise1
     {
-        public void deliveryService()
+        // This class can be static because there is no get or set 
+        public static void DeliveryService()
         {
             Console.Write("Check your zip code, example (A0): ");
             String userZipCode = Console.ReadLine();
