@@ -15,13 +15,34 @@ namespace OPP_Sem2_Week3_Q1_Q2_Q3.Exercises
     {
         public void deliveryService()
         {
-            Console.Write("Type your zipe to know info about your delivery: ");
-            int userZipCode = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Check your zip code, example (A0): ");
+            String userZipCode = Console.ReadLine();
 
-            Console.WriteLine($"Test {userZipCode}");
+            // Validator
+            bool c = false;
 
+            // Array which stores the Zip Codes
+            string[,] zipCodeCompany =  {
+                { "A1", "A2", "A3", "A4", "A5" }, 
+                { "B6", "B7", "B8", "B9", "B10" }
+             };
 
+            // Foreach for running the array
+            foreach (String temp in zipCodeCompany)
+            {
+                c = userZipCode.Equals(temp);
+                if (c)
+                    break;
+            }
 
+            if (c)
+            {
+                Console.WriteLine($"Yes, {userZipCode} is valid to delivey.");
+            }
+            else
+            {
+                Console.WriteLine($"Sorry, {userZipCode} is not valid for delivery yet.\n");
+            }
         }
     }
 }
