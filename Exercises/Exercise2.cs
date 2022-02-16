@@ -19,32 +19,31 @@ namespace OPP_Sem2_Week3_Q1_Q2_Q3.Exercises
             Console.Write("Total of students: ");
             int answer = Convert.ToInt32(Console.ReadLine());
             
-            String[] studentsName = new string[answer]; //Adding the user input in an array
-            
-            //Asking students name
+            String[] studentsName = new string[answer]; // Adding the user input in an array
+            double[] scores = new double[answer];       // This arrays saves all the scores
+            List<double> Out = new List<double>();      // This list saves all the scores and shows the max and avarege of the array scores 
+
+            // Asking students name
             for (int i = 0; i < studentsName.Length; i++)
             {
-                Console.Write($"Name of the {i} student: ");
+                Console.Write($"\nEnter the student name: ");
                 studentsName[i] = Console.ReadLine();
-            }
-            foreach (string name in studentsName)
-            {
-                Console.WriteLine("Students name: " + name);
+
+                Console.Write("Enter "+ studentsName[i] + "'s score: ");
+                scores[i] = Convert.ToDouble(Console.ReadLine());
+                Out.Add(scores[i]);
             }
 
             Console.WriteLine("\n");
-            
-            //Asking students score
-            double[] scores = new double[answer];
-            for (int i = 0; i < studentsName.Length; i++)
+
+            // Showing the student name + they score
+            for (int i = 0; i < studentsName.Length; i++) 
             {
-                Console.Write($"Score of the {i} student: ");
-                scores[i] = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("The student " +studentsName[i] + " has: " +scores[i] + ".");
             }
-            foreach (double score in scores)
-            {
-                Console.WriteLine("Students score: " + score);
-            }
+
+            Console.WriteLine("Highest grade in the class: {0}", Out.Max());
+            Console.WriteLine("Average grade of the class: {0}", Out.Average());
         }
     }
 }
