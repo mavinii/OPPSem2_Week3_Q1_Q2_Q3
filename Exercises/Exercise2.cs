@@ -16,29 +16,34 @@ namespace OPP_Sem2_Week3_Q1_Q2_Q3.Exercises
         // This class can be static because there is no get or set 
         public static void ClassMarks()
         {
-            // Enter the name and students' final score
-            Console.Write("Enter the numbers of students: ");
-            int numberOfStudents = Convert.ToInt32(Console.ReadLine());
-            int[] val = new int[numberOfStudents];
+            Console.Write("Total of students: ");
+            int answer = Convert.ToInt32(Console.ReadLine());
             
-            string[] students = { };
-            int[] score = { };
+            String[] studentsName = new string[answer]; //Adding the user input in an array
             
-            for (int i = 0; i <= val.Length; i++)
+            //Asking students name
+            for (int i = 0; i < studentsName.Length; i++)
             {
-                Console.WriteLine($"Total of student: {val.Length}.\n");
+                Console.Write($"Name of the {i} student: ");
+                studentsName[i] = Console.ReadLine();
+            }
+            foreach (string name in studentsName)
+            {
+                Console.WriteLine("Students name: " + name);
+            }
 
-                Console.Write($"Enter the {val[i]} student name: ");
-                string studentName = Console.ReadLine();
-
-                Console.Write($"Enter the {studentName}'s score: ");
-                int studentScore = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine($"\nThe student {studentName} has the score {studentScore}.");
-
-                //val[i]++;
-                //students[i] += 1;
-                //score[i]++;
+            Console.WriteLine("\n");
+            
+            //Asking students score
+            double[] scores = new double[answer];
+            for (int i = 0; i < studentsName.Length; i++)
+            {
+                Console.Write($"Score of the {i} student: ");
+                scores[i] = Convert.ToDouble(Console.ReadLine());
+            }
+            foreach (double score in scores)
+            {
+                Console.WriteLine("Students score: " + score);
             }
         }
     }
