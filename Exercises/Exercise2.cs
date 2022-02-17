@@ -42,6 +42,7 @@ namespace OPP_Sem2_Week3_Q1_Q2_Q3.Exercises
                 Console.WriteLine("The student " +studentsName[i] + " has: " +scores[i] + ".");
             }
 
+            // It displays the Max and Avarage of the Array score
             Console.WriteLine("Highest grade in the class: {0}", Out.Max());
             Console.WriteLine("Average grade of the class: {0}", Out.Average());
         }

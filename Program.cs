@@ -12,11 +12,16 @@ namespace OPP_Sem2_Week3_Q1_Q2_Q3
 
             // Exercise 1
             // Static class 
-            //Exercise1.DeliveryService();
+            Exercise1.DeliveryService();
 
             // Exercise2
             // Static class 
             Exercise2.ClassMarks();
+
+            // Exercise2
+            // Static class
+            Exercise3.GameGuess();
+
         }
     }
 }
